@@ -3,45 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hello World</title>
+    <title>Fred's Professional Website</title>
+    <meta name="description" content="Welcome to Fred's professional website. Discover my work, expertise, and get in touch.">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
         }
+        
         .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: #3498db;
+        }
+        
+        main {
+            margin-top: 80px;
+            padding: 2rem 0;
+        }
+        
+        .hero {
             text-align: center;
-            padding: 2rem;
-            background: rgba(255,255,255,0.1);
-            border-radius: 1rem;
-            backdrop-filter: blur(10px);
+            padding: 4rem 0;
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            margin-bottom: 3rem;
         }
-        h1 {
-            margin: 0 0 1rem 0;
+        
+        .hero h1 {
             font-size: 3rem;
+            margin-bottom: 1rem;
         }
-        p {
-            margin: 0;
+        
+        .hero p {
+            font-size: 1.2rem;
             opacity: 0.9;
         }
-        .emoji {
-            font-size: 4rem;
+        
+        .section {
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: #2c3e50;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            text-align: center;
+            font-size: 8rem;
+            opacity: 0.7;
+        }
+        
+        .services {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .service-icon {
+            font-size: 3rem;
             margin-bottom: 1rem;
+        }
+        
+        .contact {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 3rem 0;
+            border-radius: 10px;
+        }
+        
+        .contact h2 {
+            color: white;
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-icon {
+            font-size: 1.5rem;
+        }
+        
+        footer {
+            background: #34495e;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            nav ul {
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="emoji">🚀</div>
-        <h1>Hello World!</h1>
-        <p>Your site is ready to deploy</p>
-        <p style="margin-top: 1rem; font-size: 0.9rem;">Powered by naxp</p>
-    </div>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">Fred</div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Welcome to Fred's World</h1>
+                <p>Professional excellence meets creative innovation</p>
+            </div>
+        </section>
+
+        <div class="container">
+            <section id="about" class="section">
+                <h2>About Fred</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>Hello! I'm Fred, a passionate professional dedicated to delivering exceptional results. With years of experience and a commitment to excellence, I bring creativity, expertise, and reliability to every project.</p>
+                        <br>
+                        <p>My approach combines innovative thinking with proven methodologies to help clients achieve their goals. Whether you're looking for strategic guidance, creative solutions, or reliable execution, I'm here to make it happen.</p>
+                    </div>
+                    <div class="about-image">👨‍💼</div>
+                </div>
+            </section>
+
+            <section id="services" class="section">
+                <div class="services">
+                    <h2>What I Offer</h2>
+                    <div class="services-grid">
+                        <div class="service-item">
+                            <div class="service-icon">💼</div>
+                            <h3>Professional Consulting</h3>
+                            <p>Strategic advice and guidance to help you make informed decisions and achieve your objectives.</p>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">🎨</div>
+                            <h3>Creative Solutions</h3>
+                            <p>Innovative approaches to complex challenges, bringing fresh perspectives to your projects.</p>
+                        </div>
+                        <div class="service-item">
+                            <div class="service-icon">⚡</div>
+                            <h3>Reliable Execution</h3>
+                            <p>Dependable project management and execution, ensuring deadlines are met and quality is maintained.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact" class="section">
+                <div class="contact">
+                    <h2>Get In Touch</h2>
+                    <p>Ready to work together? Let's discuss how I can help bring your vision to life.</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>fred@example.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">📱</span>
+                            <span>(555) 123-4567</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💼</span>
+                            <span>LinkedIn: /in/fred</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Fred. All rights reserved. | Built with passion and expertise.</p>
+        </div>
+    </footer>
 </body>
 </html>
